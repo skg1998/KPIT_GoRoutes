@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\project\\KPIT\\frontend\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\live-projects\\go_Routes\\frontend\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\project\\KPIT\\frontend\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\live-projects\\go_Routes\\frontend\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
