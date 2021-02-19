@@ -29,14 +29,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig, 'my-app-name'),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent
-
-  ],
+  declarations: [AppComponent, AdminLayoutComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
