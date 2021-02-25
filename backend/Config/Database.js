@@ -1,20 +1,13 @@
-const mongoose = require('mongoose');
-
-function connection(){
-    const mongoURI = 'mongodb://localhost:27017/HacksOf';
-    mongoose.connect(mongoURI,{
-        useNewUrlParser:true,
-        useCreateIndex:true,
-        useUnifiedTopology:true,
-        useFindAndModify:true
-    });
-    const conn = mongoose.connection;
-
-    conn.once('open', ()=>{
-        console.log('Database connection');
-    }).catch(err =>{
-        console.log('Database failed');
-    })
-}
-
-module.exports = connection;
+module.exports = {
+    HOST: "localhost",
+    USER: "root",
+    PASSWORD: "",
+    DB: "testdb",
+    dialect: "mysql",
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    }
+};
