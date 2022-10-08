@@ -1,44 +1,31 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const crypto = require('crypto');
+module.exports = (sequelize, Sequelize) => {
+    const Users = sequelize.define("users", {
+        username: {
+            type: Sequelize.STRING
+        },
 
-
-const UserSchema = new Schema({
-    username:{
-        type:String,
-        require:true
-    },
-    email:{
-        type:String,
-        require:true
-    },
-    phone_number:{
-        type:String,
-        require:true
-    },
-    car_number:{
-       type:String,
-       require:true
-    },
-    hash : String, 
-    salt : String,
-    date:{
-       type:Date,
-       default:Date.now
-    }
-})
-
-UserSchema.methods.setPassword = function(password) { 
-    this.salt = crypto.randomBytes(16).toString('hex');
-    console.log(password);
-    this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex'); 
-    console.log(this.hash);
+        email: {
+            type: Sequelize.STRING
+        },
+        phone_number: {
+            type: Sequelize.INTEGER
+        },
+        car_number: {
+            type: Sequelize.STRING
+        },
+        password: {
+            type: Sequelize.STRING
+        },
+        createdAt: {
+            allowNull: false,
+            type: Sequelize.DATE,
+            defaultValue: Sequelize.fn('NOW'),
+        },
+        updatedAt: {
+            allowNull: false,
+            type: Sequelize.DATE,
+            defaultValue: Sequelize.fn('NOW'),
+        }
+    });
+    return Users;
 }; 
-
-UserSchema.methods.validPassword = function(password) { 
-    var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex'); 
-    return this.hash === hash;
-};
-
-module.exports= User = mongoose.model('users', UserSchema);
-

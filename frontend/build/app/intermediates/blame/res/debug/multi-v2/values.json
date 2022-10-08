@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "D:\\project\\Innovate for Assam\\frontend\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "D:\\project\\Innovate for Assam\\frontend\\android\\app\\src\\main\\res\\values\\styles.xml",
+=======
+            "outputFile": "D:\\live-projects\\go_Routes\\frontend\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\live-projects\\go_Routes\\frontend\\android\\app\\src\\main\\res\\values\\styles.xml",
+>>>>>>> c24b29ccfbec2cd3ec019d4a16e256b9f017f04a
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

@@ -1,36 +1,44 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthGuard } from './auth/auth.guard';
 
-const routes: Routes =[
+const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  }, {
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
     path: '',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
     children: [
-        {
-      path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  }]},
+      {
+        path: '',
+        loadChildren: () =>
+          import(`./layouts/admin-layout/admin-layout.module`).then(
+            (m) => m.AdminLayoutModule
+          ),
+      },
+    ],
+  },
   {
     path: '**',
-    redirectTo: 'dashboard'
-  }
+    redirectTo: 'auth/login',
+  },
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-  ],
+  imports: [CommonModule, BrowserModule, RouterModule.forRoot(routes)],
+  exports: [],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

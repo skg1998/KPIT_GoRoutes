@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Sun Dec 13 12:11:28 IST 2020
 base.0=D\:\\project\\Innovate for Assam\\frontend\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+=======
+#Thu Dec 24 17:46:35 IST 2020
+base.0=D\:\\live-projects\\go_Routes\\frontend\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+>>>>>>> c24b29ccfbec2cd3ec019d4a16e256b9f017f04a
 path.0=classes.dex
 renamed.0=classes.dex
